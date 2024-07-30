@@ -1,11 +1,17 @@
-import Image from "next/image";
+import React from "react";
+import Link from "next/link";
 
-export default function Home() {
+const page = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-
-       hello rich
-       
-    </main>
+    <div className="flex flex-col md:mx-20">
+      <Link
+        href="/login"
+        className="font-semibold leading-6 text-blue-600 hover:underline dark:text-[#2063EB]"
+      >
+        Sign in
+      </Link>
+    </div>
   );
-}
+};
+
+export default page;

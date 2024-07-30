@@ -1,3 +1,209 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 220.9 39.3% 11%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+  }
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.react-calendar {
+  @apply w-full text-black;
+}
+
+.react-calendar__tile {
+  @apply text-black dark:text-white;
+}
+
+.react-calendar__tile:hover {
+  @apply text-black;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+  @apply text-black;
+}
+
+.react-calendar__viewContainer {
+  @apply bg-white text-black;
+}
+
+.dark .react-calendar {
+  background-color: #111827;
+}
+
+.dark .react-calendar__tile {
+  @apply text-white;
+}
+
+.dark .react-calendar__tile:hover {
+  @apply text-black;
+}
+
+.dark .react-calendar__month-view__days__day--neighboringMonth {
+  @apply text-white;
+}
+
+.dark .react-calendar__month-view__days__day--neighboringMonth:hover {
+  @apply text-black;
+}
+
+.react-calendar__tile--disabled {
+  @apply cursor-not-allowed opacity-10 bg-gray-200 dark:bg-gray-800;
+}
+
+.dark .react-calendar__tile--disabled {
+  @apply bg-gray-800;
+}
+
+.react-calendar__viewContainer {
+  @apply bg-gray-50 dark:bg-gray-800;
+}
+
+.dark .react-calendar__tile--now {
+  @apply bg-yellow-300 text-black;
+}
+
+.react-calendar__tile--now {
+  @apply bg-blue-500 text-black;
+}
+
+.react-calendar__navigation {
+  @apply bg-white dark:bg-gray-800;
+}
+
+.react-calendar__navigation__label {
+  @apply text-black dark:text-white;
+}
+
+.react-calendar__navigation__arrow {
+  @apply text-black dark:text-white;
+}
+
+.react-calendar__navigation__label:hover,
+.react-calendar__navigation__arrow:hover {
+  @apply text-black;
+}
+
+.react-calendar__month-view__days__day--weekend {
+  color: black;
+}
+
+.dark .react-calendar__month-view__days__day--weekend {
+  color: white;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  @apply text-black;
+}
+
+.dark .react-calendar__month-view__weekdays__weekday {
+  @apply text-white bg-gray-800;
+}
+
+@media (max-width: 640px) {
+  .react-calendar__tile {
+    @apply p-1;
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.loader-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 5px;
+  z-index: 100;
+  animation: moveUpDown 1s ease-in-out infinite;
+}
+
+.loader-dot.animation-delay-0 {
+  animation-delay: 0s;
+}
+
+.loader-dot.animation-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.loader-dot.animation-delay-2 {
+  animation-delay: 0.4s;
+}
